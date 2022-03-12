@@ -5,7 +5,7 @@ class PersonalForm extends Component {
     const {onChangePersonal, personName, phone, email, address} = this.props;
 
     return(
-      <div className="personal">
+      <div className="personalForm">
         <label htmlFor="personName">Name:</label>
         <input onChange={onChangePersonal} type="text" id="personName" value={personName}></input>
 
