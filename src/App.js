@@ -12,7 +12,14 @@ class App extends Component {
       phone: '',
       email: '',
       address: '',
-      workExp: [],
+      workExp: [{
+        company: '',
+        role: '',
+        start: '',
+        end: '',
+        description: '',
+        id: 0,
+      }],
       edu: [],
       skills: [],
       inputValue: {},
@@ -22,8 +29,48 @@ class App extends Component {
     this.onEditCV = this.onEditCV.bind(this);
   }
 
+  setWorkExp = (newWorkExp) => {
+    //const workExperiences = Array.from(document.querySelectorAll('.workExp'));
+    this.setState({
+      workExp: newWorkExp
+    });
+    //let newWorkExp = [];
+    //let updated = false;
+    /*
+    if (!updated) {
+      workExperiences.forEach(exp => {
+        newWorkExp.push({
+          company: exp.children[1].value,
+          role: exp.children[3].value,
+          start: exp.children[5].value,
+          end: exp.children[7].value,
+          description: exp.children[9].value,
+        })
+      });
+
+      newWorkExp = workExperiences.map((exp, index) => {
+        return ({
+          company: exp.children[1].value,
+          role: exp.children[3].value,
+          start: exp.children[5].value,
+          end: exp.children[7].value,
+          description: exp.children[9].value,
+          id: index,
+        })
+      })
+
+      updated = true;
+      if (updated) {
+        this.setState({
+          workExp: newWorkExp
+        });
+      }
+    }*/
+  }
+
   onSubmitCV = (e) => {
     e.preventDefault();
+
     const personName = document.getElementById('personName');
     const phone = document.getElementById('phone');
     const email = document.getElementById('email');
@@ -38,7 +85,7 @@ class App extends Component {
     })
   }
 
-  onEditCV = (e) => {
+  onEditCV = () => {
     this.setState({
       mode: 'edit',
     })
@@ -52,7 +99,27 @@ class App extends Component {
   }
 
   onChangeWork = (e) => {
-    //
+    const parentNode = e.target.parentElement;
+
+    let experience = parentNode;
+    let i = 0;
+    while (experience.previousSibling != null) {
+      experience = experience.previousSibling;
+      i++;
+    }
+
+    this.setState({
+      workExp: this.state.workExp.slice(0,i).concat(
+        {
+          company: parentNode.children[1].value,
+          role: parentNode.children[3].value,
+          start: parentNode.children[5].value,
+          end: parentNode.children[7].value,
+          description: parentNode.children[9].value,
+          id: i,
+        }, 
+        this.state.workExp.slice(i+1)),
+    })
   }
 
   render() {
@@ -65,24 +132,23 @@ class App extends Component {
       display = <CVForm
                   onChangePersonal={this.onChangePersonal}
                   onChangeWork={this.onChangeWork}
+                  onSetWork={this.setWorkExp}
                   onSubmitCV={this.onSubmitCV}
                   personName={personName}
                   phone={phone}
                   email={email}
                   address={address}
                   workExp={workExp}
-                />
+                />        
     } else {
-      display = <div>
-                  <CVDisplay
-                    onEditCV={this.onEditCV}
-                    personName={personName}
-                    phone={phone}
-                    email={email}
-                    address={address}
-                    workExp={workExp}
-                  />
-                </div>
+      display = <CVDisplay
+                  onEditCV={this.onEditCV}
+                  personName={personName}
+                  phone={phone}
+                  email={email}
+                  address={address}
+                  workExp={workExp}
+                />              
     }
 
     return (

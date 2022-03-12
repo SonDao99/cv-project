@@ -1,9 +1,20 @@
 import React, {Component} from 'react';
 import PersonalForm from './PersonalForm';
+import WorkForm from './WorkForm';
 
 class CVForm extends Component {
   render() {
-    const {onChangePersonal, onSubmitCV, personName, phone, email, address} = this.props;
+    const {
+      onChangePersonal, 
+      onChangeWork, 
+      onSetWork,
+      workExp, 
+      onSubmitCV, 
+      personName, 
+      phone, 
+      email, 
+      address,
+    } = this.props;
 
     return(
       <form onSubmit={onSubmitCV}>
@@ -14,10 +25,14 @@ class CVForm extends Component {
           email={email}
           address={address}
         />
-        {/*<div className="work">
-          <h2>Work Experience</h2>
-          <button id="addWork" type="button">+</button>
-        </div>
+
+        <WorkForm
+          onSetWork={onSetWork}
+          onChangeWork={onChangeWork}
+          workExp={workExp}
+        />
+
+        {/*
         <div className="education">
           <h2>Education</h2>
           <button id="addEdu" type="button">+</button>
