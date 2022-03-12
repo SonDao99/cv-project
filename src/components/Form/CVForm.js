@@ -1,19 +1,30 @@
 import React, {Component} from 'react';
 import PersonalForm from './PersonalForm';
 import WorkForm from './WorkForm';
+import EduForm from './EduForm';
+import SkillsForm from './SkillsForm';
 
 class CVForm extends Component {
   render() {
     const {
       onChangePersonal, 
-      onChangeWork, 
-      onSetWork,
-      workExp, 
       onSubmitCV, 
       personName, 
       phone, 
       email, 
       address,
+
+      onChangeWork, 
+      onSetWork,
+      workExp, 
+      
+      edu,
+      onChangeEdu,
+      onSetEdu,
+
+      skills,
+      onChangeSkills,
+      onSetSkills,
     } = this.props;
 
     return(
@@ -32,15 +43,18 @@ class CVForm extends Component {
           workExp={workExp}
         />
 
-        {/*
-        <div className="education">
-          <h2>Education</h2>
-          <button id="addEdu" type="button">+</button>
-        </div>
-        <div className="skills">
-          <h2>Skills</h2>
-          <button id="addSkills" type="button">+</button>
-        </div>*/}
+        <EduForm
+          onSetEdu={onSetEdu}
+          onChangeEdu={onChangeEdu}
+          edu={edu}
+        />
+
+        <SkillsForm
+          skills={skills}
+          onChangeSkills={onChangeSkills}
+          onSetSkills={onSetSkills}
+        />
+
         <div className="endButtons">
           <button type="submit">Submit</button>
         </div>

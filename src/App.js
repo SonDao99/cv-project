@@ -20,19 +20,23 @@ class App extends Component {
         description: '',
         id: 0,
       }],
-      edu: [],
-      skills: [],
+      edu: [{
+        school: '',
+        degree: '',
+        start: '',
+        end: '',
+        description: '',
+        id: 0,
+      }],
+      skills: [{
+        value: '',
+        id: 0,
+      }],
       inputValue: {},
     }
 
     this.onSubmitCV = this.onSubmitCV.bind(this);
     this.onEditCV = this.onEditCV.bind(this);
-  }
-
-  setWorkExp = (newWorkExp) => {
-    this.setState({
-      workExp: newWorkExp
-    });
   }
 
   onSubmitCV = (e) => {
@@ -65,6 +69,12 @@ class App extends Component {
     })
   }
 
+  setWorkExp = (newWorkExp) => {
+    this.setState({
+      workExp: newWorkExp
+    });
+  }
+
   onChangeWork = (e) => {
     const parentNode = e.target.parentElement;
 
@@ -89,8 +99,64 @@ class App extends Component {
     })
   }
 
+  setEduExp = (newEduExp) => {
+    this.setState({
+      edu: newEduExp
+    });
+  }
+
+  onChangeEdu = (e) => {
+    const parentNode = e.target.parentElement;
+
+    let experience = parentNode;
+    let i = 0;
+    while (experience.previousSibling != null) {
+      experience = experience.previousSibling;
+      i++;
+    }
+
+    this.setState({
+      edu: this.state.edu.slice(0,i).concat(
+        {
+          school: parentNode.children[1].value,
+          degree: parentNode.children[3].value,
+          start: parentNode.children[5].value,
+          end: parentNode.children[7].value,
+          description: parentNode.children[9].value,
+          id: i,
+        }, 
+        this.state.edu.slice(i+1)),
+    })
+  }
+
+  setSkills = (newSkills) => {
+    this.setState({
+      skills: newSkills
+    });
+  }
+
+  onChangeSkills = (e) => {
+    const parentNode = e.target.parentElement;
+
+    let skill = parentNode;
+    let i = 0;
+    while (skill.previousSibling != null) {
+      skill = skill.previousSibling;
+      i++;
+    }
+
+    this.setState({
+      skills: this.state.skills.slice(0,i).concat(
+        {
+          value: parentNode.children[0].value,
+          id: i,
+        }, 
+        this.state.skills.slice(i+1)),
+    })
+  }
+
   render() {
-    const {personName, phone, email, address, workExp} = this.state;
+    const {personName, phone, email, address, workExp, edu, skills} = this.state;
 
     let {mode} = this.state;
 
@@ -98,23 +164,39 @@ class App extends Component {
     if (mode === 'edit') {
       display = <CVForm
                   onChangePersonal={this.onChangePersonal}
-                  onChangeWork={this.onChangeWork}
-                  onSetWork={this.setWorkExp}
-                  onSubmitCV={this.onSubmitCV}
                   personName={personName}
                   phone={phone}
                   email={email}
                   address={address}
+
                   workExp={workExp}
+                  onChangeWork={this.onChangeWork}
+                  onSetWork={this.setWorkExp}
+
+                  edu={edu}
+                  onChangeEdu={this.onChangeEdu}
+                  onSetEdu={this.setEduExp}
+
+                  skills={skills}
+                  onChangeSkills={this.onChangeSkills}
+                  onSetSkills={this.setSkills}
+                  
+                  onSubmitCV={this.onSubmitCV}
                 />        
     } else {
       display = <CVDisplay
                   onEditCV={this.onEditCV}
+
                   personName={personName}
                   phone={phone}
                   email={email}
                   address={address}
+
                   workExp={workExp}
+
+                  edu={edu}
+
+                  skills={skills}
                 />              
     }
 
