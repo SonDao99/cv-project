@@ -6,10 +6,6 @@ class WorkForm extends Component {
 
     this.addWork = this.addWork.bind(this);
     this.deleteWork = this.deleteWork.bind(this);
-
-    this.state = {
-      experienceFields: 0,
-    }
   }
 
 
@@ -107,109 +103,6 @@ class WorkForm extends Component {
         )
       })
     )
-    /*if (workArray.length === 0) {
-      return(
-        <div key={0} className="workExp">
-          <label htmlFor="company">Company Name:</label>
-          <input onChange={this.props.onChangeWork} type="text" className='inputCompany' value=''></input>
-
-          <label htmlFor="role">Role:</label>
-          <input onChange={this.props.onChangeWork} type="text" className='inputRole' value=''></input>
-
-          <label htmlFor="start">Start:</label>
-          <input onChange={this.props.onChangeWork} type="text" className='inputStart' value=''></input>
-
-          <label htmlFor="end">End:</label>
-          <input onChange={this.props.onChangeWork} type="text" className='inputEnd' value=''></input>
-
-          <label htmlFor="description">Description:</label>
-          <input onChange={this.props.onChangeWork} type="text" className='inputDesc' value=''></input>
-
-          <button type='button' onClick={this.deleteWork}>Delete</button>
-        </div>
-      )
-    } else {
-      return(
-        workArray.map((exp, index) => {
-          return (
-            <div key={exp.id} className="workExp">
-              <label htmlFor="company">Company Name:</label>
-              <input 
-                onChange={this.props.onChangeWork} 
-                type="text" 
-                className='inputCompany' 
-                value={exp.company}
-              ></input>
-  
-              <label htmlFor="role">Role:</label>
-              <input
-                onChange={this.props.onChangeWork}
-                type="text"
-                className='inputRole'
-                value={exp.role}
-              ></input>
-  
-              <label htmlFor="start">Start:</label>
-              <input
-                onChange={this.props.onChangeWork}
-                type="text"
-                className='inputStart'
-                value={exp.start}
-              ></input>
-  
-              <label htmlFor="end">End:</label>
-              <input
-                onChange={this.props.onChangeWork}
-                type="text"
-                className='inputEnd'
-                value={exp.end}
-              ></input>
-  
-              <label htmlFor="description">Description:</label>
-              <input
-                onChange={this.props.onChangeWork}
-                type="text"
-                className='inputDesc'
-                value={exp.description}
-              ></input>
-  
-              <button type='button' onClick={this.deleteWork}>Delete</button>
-            </div>
-          )
-        })
-      )
-    }/*
-  }
-
-  basicField = () => {
-    return (
-      <div className="workExp">
-        <label htmlFor="company">Company Name:</label>
-        <input onChange={this.props.onChangeWork} type="text" className='inputCompany'></input>
-
-        <label htmlFor="role">Role:</label>
-        <input onChange={this.props.onChangeWork} type="text" className='inputRole'></input>
-
-        <label htmlFor="start">Start:</label>
-        <input onChange={this.props.onChangeWork} type="text" className='inputStart'></input>
-
-        <label htmlFor="end">End:</label>
-        <input onChange={this.props.onChangeWork} type="text" className='inputEnd'></input>
-
-        <label htmlFor="description">Description:</label>
-        <input onChange={this.props.onChangeWork} type="text" className='inputDesc'></input>
-
-        <button type='button' onClick={this.deleteWork}>Delete</button>
-      </div>
-    )
-  }
-
-  extraFields = (e) => {
-    /*if (this.state.experienceFields !== 0) {
-      for (let i = 1; i <= this.state.experienceFields; i += 1) {
-        this.basicField();
-      }
-    }*/
   }
 
 

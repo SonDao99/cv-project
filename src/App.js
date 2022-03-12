@@ -30,42 +30,9 @@ class App extends Component {
   }
 
   setWorkExp = (newWorkExp) => {
-    //const workExperiences = Array.from(document.querySelectorAll('.workExp'));
     this.setState({
       workExp: newWorkExp
     });
-    //let newWorkExp = [];
-    //let updated = false;
-    /*
-    if (!updated) {
-      workExperiences.forEach(exp => {
-        newWorkExp.push({
-          company: exp.children[1].value,
-          role: exp.children[3].value,
-          start: exp.children[5].value,
-          end: exp.children[7].value,
-          description: exp.children[9].value,
-        })
-      });
-
-      newWorkExp = workExperiences.map((exp, index) => {
-        return ({
-          company: exp.children[1].value,
-          role: exp.children[3].value,
-          start: exp.children[5].value,
-          end: exp.children[7].value,
-          description: exp.children[9].value,
-          id: index,
-        })
-      })
-
-      updated = true;
-      if (updated) {
-        this.setState({
-          workExp: newWorkExp
-        });
-      }
-    }*/
   }
 
   onSubmitCV = (e) => {
