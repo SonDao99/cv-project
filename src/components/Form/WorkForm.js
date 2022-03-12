@@ -8,8 +8,7 @@ class WorkForm extends Component {
     this.deleteWork = this.deleteWork.bind(this);
   }
 
-
-  addWork = (e) => {
+  addWork = () => {
     let updated = false;
     let newWorkExp = this.props.workExp;
     newWorkExp.push({
@@ -107,7 +106,7 @@ class WorkForm extends Component {
 
 
   render() {
-    const {workExp,} = this.props;
+    const {workExp} = this.props;
 
     return(
       <div className='allWork'>
