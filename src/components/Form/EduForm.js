@@ -98,7 +98,7 @@ class EduForm extends Component {
               value={exp.description}
             ></input>
 
-            <button type='button' onClick={this.deleteEdu}>Delete</button>
+            <button type='button' onClick={this.deleteEdu} className="delete">Delete</button>
           </div>
         )
       })
@@ -117,7 +117,7 @@ class EduForm extends Component {
           {this.displayEdu(edu)}
         </div>
 
-        <button type='button' onClick={this.addEdu}>Add</button>
+        <button type='button' onClick={this.addEdu} className="add">Add</button>
       </div>
     )
   }

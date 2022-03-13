@@ -97,7 +97,7 @@ class WorkForm extends Component {
               value={exp.description}
             ></input>
 
-            <button type='button' onClick={this.deleteWork}>Delete</button>
+            <button type='button' onClick={this.deleteWork} className="delete">Delete</button>
           </div>
         )
       })
@@ -116,7 +116,7 @@ class WorkForm extends Component {
           {this.displayWork(workExp)}
         </div>
 
-        <button type='button' onClick={this.addWork}>Add</button>
+        <button type='button' onClick={this.addWork} className="add">Add</button>
       </div>
     )
   }

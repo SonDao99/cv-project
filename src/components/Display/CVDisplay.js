@@ -31,7 +31,9 @@ class CVDisplay extends Component {
 
         <Skills skills={skills}/>
 
-        <button onClick={onEditCV}>Edit</button>
+        <div className='endButtons'>
+          <button onClick={onEditCV}>Edit</button>
+        </div>
       </div>
     )
   }

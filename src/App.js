@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CVForm from './components/Form/CVForm';
 import CVDisplay from './components/Display/CVDisplay';
+import './styles/style.css';
 
 class App extends Component {
   constructor() {
@@ -12,26 +13,26 @@ class App extends Component {
       phone: '',
       email: '',
       address: '',
-      workExp: [{
+      workExp: [/*{
         company: '',
         role: '',
         start: '',
         end: '',
         description: '',
         id: 0,
-      }],
-      edu: [{
+      }*/],
+      edu: [/*{
         school: '',
         degree: '',
         start: '',
         end: '',
         description: '',
         id: 0,
-      }],
-      skills: [{
+      }*/],
+      skills: [/*{
         value: '',
         id: 0,
-      }],
+      }*/],
       inputValue: {},
     }
 

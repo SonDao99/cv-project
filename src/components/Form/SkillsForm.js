@@ -61,7 +61,7 @@ class SkillsForm extends Component {
               value={skill.value}
             ></input>
 
-            <button type='button' onClick={this.deleteSkill}>Delete</button>
+            <button type='button' onClick={this.deleteSkill} className="delete">Delete</button>
           </div>
         )
       })
@@ -80,7 +80,7 @@ class SkillsForm extends Component {
           {this.displaySkills(skills)}
         </div>
 
-        <button type='button' onClick={this.addSkill}>Add</button>
+        <button type='button' onClick={this.addSkill} className="add">Add</button>
       </div>
     )
   }

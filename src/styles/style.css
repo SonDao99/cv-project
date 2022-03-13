@@ -1,0 +1,214 @@
+@font-face {
+    font-family: josefin;
+    src: url(JosefinSansLight-ZVEll.ttf);
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body, .root, .App, #header {
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: josefin;
+    font-size: 20px;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personalForm,
+.allWork,
+.allEdu,
+.allSkills,
+.allWorkExperiences,
+.workExp,
+.allEduExperiences,
+.EduExp,
+.allSkillInputs 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+html, .App {
+    background-color: rgb(226, 233, 248);
+}
+
+#header {
+    height: 100px;
+    background-color: rgb(49, 48, 48);
+    color: white;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#header h1 {
+    margin: 0;
+    padding: 20px;
+}
+
+form, #display {
+    width: 800px;
+    background-color: white;
+    box-shadow: 0 2px 30px -15px;
+    margin-bottom: 30px;
+}
+
+form {
+    padding: 40px;
+    padding-right: 80px;
+    padding-left: 80px;
+    padding-bottom: 0;
+}
+
+.personal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: rgb(238, 237, 237);*/
+    background-color: rgb(49, 48, 48);
+    color: white;
+    padding: 40px;
+    padding-right: 80px;
+    padding-left: 80px;
+    gap: 20px;
+}
+
+.placeAndDates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.placeAndDates p {
+    margin: 0;
+}
+
+.workExperience, .skills {
+    padding: 0px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.EduExp, .workExp {
+    padding-bottom: 20px;
+    border-bottom-style: dashed;
+    border-width: 1.5px;
+}
+
+.allSkills {
+    margin-bottom: 50px;
+}
+
+.skills {
+    margin-bottom: 80px;
+}
+
+.skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.allSkillItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.experience {
+    border-left-style: solid;
+    border-width: 1px;
+    padding-left: 10px;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 1000;
+}
+
+h2 {
+    border-bottom-style: solid;
+    border-width: 2px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 0;
+    margin-top: 5px;
+}
+
+button {
+    width: 200px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 8px;
+    margin: 0;
+    border-radius: 5px;
+    align-self: center;
+    border-style: none;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 5px;
+    border-radius: 5px;   
+}
+
+.endButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    border-top-style: dashed;
+    border-width: 1.5px;
+}
+
+.add, .delete {
+    color: white;
+}
+
+.add {
+    background-color: rgb(44, 136, 44);
+}
+
+.add:hover {
+    background-color: rgb(82, 182, 82);
+}
+
+.add:active {
+    background-color: rgb(62, 179, 62);
+}
+
+.delete {
+    background-color: firebrick;
+}
+
+.delete:hover {
+    background-color: rgb(221, 44, 44);
+}

@@ -56,7 +56,7 @@ class CVForm extends Component {
         />
 
         <div className="endButtons">
-          <button type="submit">Submit</button>
+          <button type="submit">View CV</button>
         </div>
       </form>
     )

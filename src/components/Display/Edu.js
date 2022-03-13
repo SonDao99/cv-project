@@ -9,9 +9,12 @@ class Edu extends Component {
           {edu.map((exp) => {
               return(
                 <div key={exp.id} className='experience'>
-                  <h3>{exp.school}</h3>
-                  <p>{exp.degree}</p>
-                  <p>{exp.start} - {exp.end}</p>
+                  <div className='placeAndDates'>
+                    <h3>{exp.school}</h3>
+                    <p>{exp.start} - {exp.end}</p>
+                  </div>
+                  
+                  <p><strong>{exp.degree}</strong></p>
                   <p>{exp.description}</p>
                 </div>
               );

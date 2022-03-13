@@ -9,9 +9,12 @@ class Work extends Component {
           {workExp.map((work) => {
               return(
                 <div key={work.id} className='experience'>
-                  <h3>{work.company}</h3>
-                  <p>{work.role}</p>
-                  <p>{work.start} - {work.end}</p>
+                  <div className='placeAndDates'>
+                    <h3>{work.company}</h3>
+                    <p>{work.start} - {work.end}</p>
+                  </div>
+                  
+                  <p><strong>{work.role}</strong></p>
                   <p>{work.description}</p>
                 </div>
               );
