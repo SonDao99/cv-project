@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/cv-project/static/css/main.59d7518d.css",
+    "main.js": "/cv-project/static/js/main.2d9f3ccc.js",
+    "static/media/JosefinSansLight-ZVEll.ttf": "/cv-project/static/media/JosefinSansLight-ZVEll.1abcd289d74d87f2bbb9.ttf",
+    "index.html": "/cv-project/index.html",
+    "main.59d7518d.css.map": "/cv-project/static/css/main.59d7518d.css.map",
+    "main.2d9f3ccc.js.map": "/cv-project/static/js/main.2d9f3ccc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59d7518d.css",
+    "static/js/main.2d9f3ccc.js"
+  ]
+}
